@@ -23,13 +23,15 @@
     },
     "config": {
         "platform": {
-            "php": "8.1.0"
+            "php": "8.2.0"
         },
         "sort-packages": true,
         "process-timeout": 3600
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "php": "8.1 - 8.3",
+        "php": "8.2 - 8.4",
         "ext-ctype": "*",
         "ext-curl": "*",
         "ext-fileinfo": "*",
@@ -43,15 +45,15 @@
         "ext-session": "*",
         "ext-xml": "*",
         "aura/router": "3.3.0",
-        "doctrine/dbal": "3.8.0",
+        "doctrine/dbal": "4.0.1",
         "ezyang/htmlpurifier": "4.17.0",
         "fig/http-message-util": "1.1.5",
         "fisharebest/algorithm": "1.6.0",
         "fisharebest/ext-calendar": "2.6.0",
         "fisharebest/localization": "1.17.0",
         "guzzlehttp/guzzle": "7.8.1",
-        "illuminate/database": "10.43.0",
-        "illuminate/support": "10.43.0",
+        "illuminate/database": "11.x-dev",
+        "illuminate/support": "11.x-dev",
         "intervention/image": "2.7.2",
         "io-developer/php-whois": "4.1.10",
         "league/commonmark": "2.4.2",
@@ -60,7 +62,7 @@
         "league/flysystem-ziparchive": "3.24.0",
         "middlewares/client-ip": "2.0.1",
         "mlocati/ip-lib": "1.18.0",
-        "nesbot/carbon": "2.72.1",
+        "nesbot/carbon": "3.0.2",
         "nyholm/psr7": "1.8.1",
         "nyholm/psr7-server": "1.1.0",
         "oscarotero/middleland": "1.0.1",
@@ -70,9 +72,9 @@
         "psr/http-server-middleware": "1.0.2",
         "ramsey/uuid": "4.7.5",
         "sabre/vobject": "4.5.4",
-        "symfony/cache": "6.4.3",
-        "symfony/expression-language": "6.4.3",
-        "symfony/mailer": "6.4.3",
+        "symfony/cache": "7.0.4",
+        "symfony/expression-language": "7.0.3",
+        "symfony/mailer": "7.0.4",
         "symfony/polyfill-mbstring": "1.29.0",
         "tecnickcom/tcpdf": "6.6.5"
     },
@@ -81,7 +83,7 @@
         "ext-libxml": "*",
         "ext-pdo_sqlite": "*",
         "ext-sqlite3": "*",
-        "composer/composer": "2.7.0",
+        "composer/composer": "2.7.1",
         "league/flysystem-memory": "3.24.0",
         "php-coveralls/php-coveralls": "2.7.0",
         "phpunit/phpunit": "10.5.10"
@@ -133,7 +135,7 @@
         "webtrees:phpstan-baseline": [
             "@composer global require --quiet phpstan/phpstan=* phpstan/extension-installer=* phpstan/phpstan-deprecation-rules=* phpstan/phpstan-strict-rules=* phpstan/phpstan-phpunit=*",
             "@composer install --quiet",
-            "~/.composer/vendor/bin/phpstan analyze --memory-limit=-1 --level=max --generate-baseline=phpstan-baseline.php",
+            "~/.composer/vendor/bin/phpstan analyze --level=max --generate-baseline=phpstan-baseline.php",
 						"sed -i -e 's/\\t/    /' phpstan-baseline.php",
 						"sed -i -e 's/ declare(strict_types = 1)/\\n\\ndeclare(strict_types=1)/' phpstan-baseline.php",
             "@composer install --no-dev --quiet"
